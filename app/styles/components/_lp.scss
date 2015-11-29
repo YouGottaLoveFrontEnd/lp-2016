@@ -1,0 +1,275 @@
+
+body {
+  color: $color-white;
+  margin: 0;
+  padding: 0;
+  font-family: $font-family;
+}
+
+.video-wrapper {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: auto;
+  bottom: auto;
+  z-index: -1;
+  box-sizing: border-box;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+  overflow: hidden;
+}
+
+video {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  max-width: none;
+  object-fit: cover;
+}
+
+.video-bg {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+}
+
+main {
+  max-width: 455px;
+  min-width: 300px;
+  width: 90%;
+  margin: 0 auto;
+  position: relative;
+  padding: calc((100vh - 635px) /2) 0;
+}
+
+h1,
+h2,
+p,
+label,
+input {
+  font-family: $font-family;
+}
+
+h1 {
+  margin: 0;
+  font-size: 38px;
+  line-height: 55px;
+  letter-spacing: 16px;
+}
+
+h2 {
+  font-size: 22px;
+  text-align: center;
+  margin-top: 0;
+
+  .divider:after {
+    content: '|';
+    display: inline;
+  }
+}
+
+section {
+  padding: 38px 25px;
+  width: calc(100% - 60px);
+  max-width: 395px;
+  border: 5px solid;
+}
+
+p {
+  text-align: center;
+  font-size: 17px;
+}
+
+a {
+  &:hover {
+    color: $color-white;
+    text-decoration: none;
+  }
+}
+
+form {
+  width: 100%;
+  position: relative;
+  height: 80px;
+
+  label {
+    .placeholder {
+      position: absolute;
+      left: 17px;
+      top: 14px;
+      transition: all .2s;
+      font-size: $input-font-size;
+    }
+  }
+
+  .error-msg {
+    font-size: 9px;
+    width: 62%;
+    text-align: right;
+    display: none;
+    position: absolute;
+    top: 50px;
+  }
+
+  &.err {
+    .error-msg {
+      display: block;
+    }
+  }
+
+}
+
+input {
+  &[type='submit'] {
+    font-size: $input-font-size;
+    background-color: $color-white;
+    float: right;
+    height: 43px;
+    line-height: 43px;
+    width: 28%;
+    border: 0;
+    cursor: pointer;
+    transition: all .2s;
+  }
+
+  &[type='email'] {
+    font-size: $input-font-size;
+    border-radius: 0;
+    border-color: $color-white;
+    color: $color-white;
+    float: left;
+    width: calc(65% - 34px);
+    background: transparent;
+    border-width: 3px;
+    height: 37px;
+    line-height: 37px;
+    padding: 0 17px;
+    outline: none;
+    
+    &:focus {
+      border-color: $color-white;
+      border-width: 3px;
+    }
+  }
+}
+
+.email:focus {
+
+  ~ .placeholder {
+    top: 50px;
+    left: 0;
+    font-size: 14px;
+  }
+}
+
+.submit {
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    background-color: rgba($color-white, .5);
+  }
+}
+
+.external-links {
+  width: 334px;
+  margin: 0 auto;
+  height: 20px;
+  position: relative;
+
+  * {
+    float: left;
+    margin: 0 8px;
+    color: $color-white;
+  }
+
+  i {
+    width: 18px;
+    height: 16px;
+    background: image-url('lp-social-icons.png');
+
+    &.fb {
+      background-position: 0 16px;
+    }
+
+    &.twitter {
+      background-position: 0 0;
+    }
+  }
+
+  hr {
+    width: 20px;
+    border-width: 3px;
+    margin-top: 8px;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    border-color: $color-white;
+
+  }
+}
+
+@media (max-width: 480px) {
+
+  main {
+    padding: calc((100vh - 480px) /2) 0;
+  }
+
+  h2 {
+    text-align: left;
+
+    .divider:after {
+      content: '-';
+    }
+  }
+
+  section {
+    padding: 13px 21px;
+    width: calc(100% - 60px);
+    margin: 0 auto;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 38px;
+    line-height: 55px;
+    letter-spacing: 3.5px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  form {
+    top: 30px;
+
+    .error-msg {
+      top: -15px;
+      right: 0;
+    }
+  }
+
+  .email:focus {
+    outline: none;
+
+    ~ .placeholder {
+      top: -20px;
+    }
+
+  }
+
+  .external-links {
+    width: 274px;
+    top: 31px;
+
+    * {
+      margin: 0 4px;
+
+    }
+  }
+}

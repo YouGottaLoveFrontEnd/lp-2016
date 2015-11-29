@@ -1,0 +1,28 @@
+// Define responsive font-size. From now we're using only REMs or %.
+html {
+	@include respond-to("mobile") {
+		font-size: 18px;
+	}
+
+	@include respond-to("phablet") {
+		font-size: 18px;
+	}
+
+	@include respond-to("tablet") {
+		font-size: 16px;
+	}
+
+	@include respond-to("desktop") {
+		font-size: 20px;
+	}
+}
+
+body {
+	font-family: $skin-font-family;
+	background: $skin-background;
+}
+
+.link {
+  color: $color-green;
+  @include animated-link($color-green, 6px);
+}
