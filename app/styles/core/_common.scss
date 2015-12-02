@@ -1,17 +1,7 @@
-@each $side in (right left) {
-	.pull-#{$side} {
-		float: $side;
-	}
-}
 
-.clearfix {
-	@include clearfix();
-}
+@mixin clear-appearnce() {
+   -webkit-appearance: none;
+   -moz-appearance:    none;
+   appearance:         none;
 
-.underline {
-  text-decoration: underline;
-}
-
-.important {
-	font-weight: 400;
 }

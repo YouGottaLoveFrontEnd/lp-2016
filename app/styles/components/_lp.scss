@@ -38,12 +38,12 @@ video {
 }
 
 main {
-  max-width: 455px;
+  max-width: 494px;
   min-width: 300px;
   width: 90%;
   margin: 0 auto;
   position: relative;
-  padding: calc((100vh - 635px) /2) 0;
+  padding: calc((100vh - 626px) /2) 0;
 }
 
 h1,
@@ -55,16 +55,19 @@ input {
 }
 
 h1 {
+  font-weight:400;
   margin: 0;
-  font-size: 38px;
-  line-height: 55px;
+  font-size: 55px;
+  line-height: 65px;
   letter-spacing: 16px;
 }
 
 h2 {
-  font-size: 22px;
   text-align: center;
-  margin-top: 0;
+  margin: 0 0 28px;
+  font-weight:200;
+  letter-spacing: 3px;
+  font-size: 24px;
 
   .divider:after {
     content: '|';
@@ -73,36 +76,41 @@ h2 {
 }
 
 section {
-  padding: 38px 25px;
   width: calc(100% - 60px);
   max-width: 395px;
-  border: 5px solid;
+  border: 3px solid;
+  padding: 35px 46px;
 }
 
 p {
   text-align: center;
-  font-size: 17px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  margin: 42px 0 26px;
+  font-weight: 200;
 }
 
 a {
+  text-decoration: none;
+
   &:hover {
     color: $color-white;
-    text-decoration: none;
   }
 }
 
 form {
   width: 100%;
   position: relative;
-  height: 80px;
+  display: inline-block;
 
   label {
     .placeholder {
       position: absolute;
       left: 17px;
-      top: 14px;
       transition: all .2s;
-      font-size: $input-font-size;
+      font-size: 14px;
+      top: 11px;
+      letter-spacing: 2px;
     }
   }
 
@@ -128,12 +136,15 @@ input {
     font-size: $input-font-size;
     background-color: $color-white;
     float: right;
-    height: 43px;
-    line-height: 43px;
+    height: 41px;
+    line-height: 41px;
     width: 28%;
     border: 0;
     cursor: pointer;
+    letter-spacing: 4px;
     transition: all .2s;
+    border-radius: 0;
+    @include clear-appearnce();
   }
 
   &[type='email'] {
@@ -142,17 +153,17 @@ input {
     border-color: $color-white;
     color: $color-white;
     float: left;
-    width: calc(65% - 34px);
+    width: calc(68% - 34px);
     background: transparent;
-    border-width: 3px;
     height: 37px;
     line-height: 37px;
     padding: 0 17px;
     outline: none;
-    
+    border-width: 2px;
+    letter-spacing: 1px;
+
     &:focus {
       border-color: $color-white;
-      border-width: 3px;
     }
   }
 }
@@ -177,10 +188,13 @@ input {
 }
 
 .external-links {
-  width: 334px;
-  margin: 0 auto;
-  height: 20px;
+  width: calc(100% - 100px);
+  padding: 0 50px;
   position: relative;
+  padding-top: 70px;
+  text-decoration: none;
+  letter-spacing: 4px;
+  display: inline-block;
 
   * {
     float: left;
@@ -202,14 +216,11 @@ input {
     }
   }
 
-  hr {
+  .divider:after {
+    content: '-';
     width: 20px;
-    border-width: 3px;
-    margin-top: 8px;
-    border-left: 0;
-    border-right: 0;
-    border-top: 0;
-    border-color: $color-white;
+    height: 40px;
+
 
   }
 }
@@ -217,11 +228,17 @@ input {
 @media (max-width: 480px) {
 
   main {
-    padding: calc((100vh - 480px) /2) 0;
+    padding: 22px 0 0 ;
+    width: 275px;
+    min-width: 275px;
   }
 
   h2 {
     text-align: left;
+    font-size: 18px;
+    line-height: 26px;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
 
     .divider:after {
       content: '-';
@@ -229,20 +246,20 @@ input {
   }
 
   section {
-    padding: 13px 21px;
-    width: calc(100% - 60px);
-    margin: 0 auto;
+    padding: 15px 43px 15px 11px;
   }
 
   h1 {
     margin: 0;
-    font-size: 38px;
-    line-height: 55px;
-    letter-spacing: 3.5px;
+    font-size: 30px;
+    line-height: 40px;
+    letter-spacing: 12px;
   }
 
   p {
     font-size: 14px;
+    text-align: left;
+    margin: 40px 0 0;
   }
 
   form {
@@ -263,13 +280,44 @@ input {
 
   }
 
+
+  input {
+    &[type='submit'] {
+      width: 18%;
+      font-size: 14px;
+      letter-spacing: 2px;
+    }
+
+    &[type='email'] {
+      width: calc(78% - 34px);
+    } 
+  }
+
   .external-links {
-    width: 274px;
-    top: 31px;
+    width: 90%;
+    padding: 31px 0 0;
+    top: 25px;
+    left: 5%;  
+
+    .divider:after {
+      content: '|';
+    }
 
     * {
-      margin: 0 4px;
+      margin: 0 2px;
+      letter-spacing: 2px;
+      line-height: 16px;
+      overflow: hidden;
+    }
 
+    .divider:nth-child(2) {
+       margin: 0 3px;       
+    }
+
+    i.fb {
+      background-position: 15px 16px;
+      width: 14px;
+      margin: 0;
     }
   }
 }
