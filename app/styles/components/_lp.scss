@@ -67,7 +67,7 @@ h2 {
   margin: 0 0 28px;
   font-weight:200;
   letter-spacing: 3px;
-  font-size: 24px;
+  font-size: 23px;
 
   .divider:after {
     content: '|';
@@ -84,7 +84,7 @@ section {
 
 p {
   text-align: center;
-  font-size: 16px;
+  font-size: 15px;
   letter-spacing: 1px;
   margin: 42px 0 26px;
   font-weight: 200;
@@ -159,7 +159,7 @@ input {
     line-height: 37px;
     padding: 0 17px;
     outline: none;
-    border-width: 2px;
+    border-width: 1px;
     letter-spacing: 1px;
 
     &:focus {
@@ -168,8 +168,8 @@ input {
   }
 }
 
+.email.withText,
 .email:focus {
-
   ~ .placeholder {
     top: 50px;
     left: 0;
@@ -217,7 +217,7 @@ input {
   }
 
   .divider:after {
-    content: '-';
+    content: '—';
     width: 20px;
     height: 40px;
 
@@ -239,6 +239,7 @@ input {
     line-height: 26px;
     margin-bottom: 20px;
     letter-spacing: 2px;
+    font-weight: 400;
 
     .divider:after {
       content: '-';
@@ -261,17 +262,24 @@ input {
     text-align: left;
     margin: 40px 0 0;
     letter-spacing: 2px;
+
   }
 
   form {
     top: 30px;
 
+    label {
+      .placeholder {
+        font-weight: 200;
+      }
+    }
     .error-msg {
       top: -15px;
       right: 0;
     }
   }
 
+  .email.withText,
   .email:focus {
     outline: none;
 
@@ -291,6 +299,7 @@ input {
 
     &[type='email'] {
       width: calc(78% - 34px);
+      font-weight: 200;
     } 
   }
 

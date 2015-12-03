@@ -32,4 +32,14 @@ $(document).ready(function () {
     }
 
     $('.form').on('submit', validateForm);
+
+    $('.email').on('change', function () {
+        if(this.value !== '' && !$(this).hasClass('withText') ) {
+            $(this).addClass('withText');
+        }
+        if (this.value === '') {
+            $(this).removeClass('withText');
+        }
+
+    });
 });
