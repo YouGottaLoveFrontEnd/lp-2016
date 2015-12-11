@@ -17,8 +17,10 @@ function validateForm() {
 }
 
 function videoElement() {
-    $('video')[0].play();
-    $('.video-bg').fadeOut();
+    if (document.documentElement.clientWidth > 480) {
+        $('video')[0].play();
+        $('.video-bg').fadeOut();
+    }
 }
 
 $(document).ready(function () {

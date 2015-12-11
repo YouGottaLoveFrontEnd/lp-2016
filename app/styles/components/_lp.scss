@@ -32,7 +32,6 @@ video {
 
 .video-bg {
   position: absolute;
-
   top: 0;
   left: 0;
 }
@@ -41,9 +40,9 @@ main {
   max-width: 494px;
   min-width: 300px;
   width: 90%;
-  margin: 0 auto;
+  margin: 20px auto;
   position: relative;
-  padding: calc((100vh - 626px) /2) 0;
+  padding: calc((100vh - 675px) /2) 0;
 }
 
 h1,
@@ -83,10 +82,9 @@ section {
 }
 
 p {
-  text-align: center;
-  font-size: 15px;
+  font-size: 21px;
   letter-spacing: 1px;
-  margin: 42px 0 26px;
+  margin: 55px 0 20px;
   font-weight: 200;
 }
 
@@ -94,7 +92,7 @@ a {
   text-decoration: none;
 
   &:hover {
-    color: $color-white;
+    color: darken($color-white, 10)
   }
 }
 
@@ -161,6 +159,7 @@ input {
     outline: none;
     border-width: 1px;
     letter-spacing: 1px;
+    font-weight: 200;
 
     &:focus {
       border-color: $color-white;
@@ -183,22 +182,23 @@ input {
   }
 
   &:hover {
-    background-color: rgba($color-white, .5);
+    background-color: darken($color-white, 10);
   }
 }
 
 .external-links {
-  width: calc(100% - 100px);
-  padding: 0 50px;
+  width: 100%;
+  padding: 10px 0;
   position: relative;
-  padding-top: 70px;
+  margin-top: 70px;
   text-decoration: none;
   letter-spacing: 4px;
   display: inline-block;
+  text-align: center;
+  font-size: 18px;
 
   * {
-    float: left;
-    margin: 0 8px;
+    display: inline-block;
     color: $color-white;
   }
 
@@ -206,6 +206,7 @@ input {
     width: 18px;
     height: 16px;
     background: image-url('lp-social-icons.png');
+    vertical-align: sub;
 
     &.fb {
       background-position: 0 16px;
@@ -216,19 +217,32 @@ input {
     }
   }
 
-  .divider:after {
-    content: '—';
-    width: 20px;
-    height: 40px;
+  .divider {
 
+    &:after {
+      content: '—';
+      width: 20px;
+      height: 40px;
+    }
 
+    &:first-of-type {
+      margin-left: 25px;
+    }
+
+    &:last-of-type {
+      margin-right: 15px;
+    }
   }
 }
 
 @media (max-width: 480px) {
 
+  .video-bg {
+    height: 100%;
+  }
+
   main {
-    padding: calc((100vh - 464px) /2) 0 0;
+    padding: calc((100vh - 500px) /2) 0 0;
     width: 275px;
     min-width: 275px;
   }
@@ -289,7 +303,6 @@ input {
 
   }
 
-
   input {
     &[type='submit'] {
       width: 18%;
@@ -300,34 +313,36 @@ input {
     &[type='email'] {
       width: calc(78% - 34px);
       font-weight: 200;
-    } 
+	  font-size: 14px;
+    }
   }
 
   .external-links {
-    width: 90%;
-    padding: 31px 0 0;
-    top: 25px;
-    left: 5%;  
+	margin-top: 50px;
+	padding: 10px 0;
+	font-size: 15px;
 
-    .divider:after {
-      content: '|';
-    }
+    .divider {
+		width: 10px;
+
+		&:first-of-type {
+			margin-left: 5px;
+		}
+
+		&:last-of-type {
+			margin-right: 5px;
+		}
+	}
 
     * {
-      margin: 0 2px;
       letter-spacing: 2px;
       line-height: 16px;
       overflow: hidden;
     }
 
-    .divider:nth-child(2) {
-       margin: 0 3px;       
-    }
-
     i.fb {
       background-position: 15px 16px;
       width: 14px;
-      margin: 0;
     }
   }
 }
